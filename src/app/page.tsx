@@ -14,7 +14,6 @@ export default async function Home() {
   return (
     <>
       <SliceZone slices={home.data.slices} components={components} />
-      <h1 className="text-red-500">TESTE</h1>
     </>
   );
 }
