@@ -1,6 +1,9 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
+import { SodaCan } from "./SodaCan";
+import { Environment, Float } from "@react-three/drei";
+import { Suspense } from "react";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 type Props = {};
@@ -17,13 +20,23 @@ export default function ViewCanvas({}: Props) {
         pointerEvents: "none",
         zIndex: 30,
       }}
+      shadows
+      dpr={[1, 1.5]}
+      gl={{ antialias: true }}
+      camera={{
+        fov: 30,
+      }}
     >
-      <mesh rotation={[0.5, 0.5, 0]} position={[1, 0, 0]}>
-        <boxGeometry />
-        <meshStandardMaterial color={"hotpink"} />
-      </mesh>
-      <ambientLight intensity={2} />
-      <spotLight intensity={3} position={[1, 1, 1]} />
+      <Float
+        speed={1}
+        rotationIntensity={7}
+        floatIntensity={1}
+        floatingRange={[-0.1, 0.1]}
+      >
+        <SodaCan />
+      </Float>
+      <Environment files="hdr/lobby.hdr" environmentIntensity={1.5} />
+      <Suspense fallback={null}></Suspense>
     </Canvas>
   );
 }
