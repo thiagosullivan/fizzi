@@ -4,6 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { SodaCan } from "./SodaCan";
 import { Environment, Float } from "@react-three/drei";
 import { Suspense } from "react";
+// import lobbyHdr from "../../public/";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 type Props = {};
@@ -35,8 +36,9 @@ export default function ViewCanvas({}: Props) {
       >
         <SodaCan />
       </Float>
-      <Environment files="hdr/lobby.hdr" environmentIntensity={1.5} />
-      <Suspense fallback={null}></Suspense>
+      <Suspense fallback={null}>
+        <Environment files="/hdr/lobby.hdr" environmentIntensity={1.5} />
+      </Suspense>
     </Canvas>
   );
 }
