@@ -1,10 +1,8 @@
 "use client";
 
 import { Canvas } from "@react-three/fiber";
-import { SodaCan } from "./SodaCan";
-import { Environment, Float } from "@react-three/drei";
+import { View } from "@react-three/drei";
 import { Suspense } from "react";
-// import lobbyHdr from "../../public/";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-object-type
 type Props = {};
@@ -28,17 +26,8 @@ export default function ViewCanvas({}: Props) {
         fov: 30,
       }}
     >
-      <Float
-        speed={1}
-        rotationIntensity={7}
-        floatIntensity={1}
-        floatingRange={[-0.1, 0.1]}
-      >
-        <SodaCan />
-      </Float>
-      <Suspense fallback={null}>
-        <Environment files="/hdr/lobby.hdr" environmentIntensity={1.5} />
-      </Suspense>
+      <View.Port />
+      <Suspense fallback={null}></Suspense>
     </Canvas>
   );
 }
