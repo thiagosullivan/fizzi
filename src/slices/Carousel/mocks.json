@@ -1,0 +1,31 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Pariatur quis enim culpa laboris duis reprehenderit nisi veniam."
+						}
+					}
+				]
+			},
+			"price_copy": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Consequat cupidatat est excepteur do pariatur aute aliqua Lorem culpa magna cillum cupidatat. Culpa amet esse velit."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
